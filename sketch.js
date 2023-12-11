@@ -30,7 +30,9 @@ function setup() {
   buttonX = width / 2;
   buttonY = height / 2;
 
-  video = createCapture(VIDEO);
+  //video = createCapture(VIDEO);
+  video = createCapture({video: { facingMode: { exact: "environment" } },
+  });
   video.hide();
   classifyVideo();
   layoutDraw();
