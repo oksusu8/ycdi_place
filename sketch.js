@@ -95,9 +95,10 @@ function detectPlace() {
     
     fill(255,153,0);
     noStroke();
-    textSize(32);
+    textSize(36);
     textAlign(CENTER);
     text('장소 스캔중...', width/2, height*0.4);
+    textStyle(BOLD);
   }
   else {
     fill(255,255,255,200);
@@ -107,7 +108,8 @@ function detectPlace() {
     fill(0);
     textSize(36);
     textAlign(CENTER);
-    text(' 📍 '+ label, width/2, height*0.13);
+    textStyle(BOLD);
+    text(' 📍 '+ label, width/2, height*0.1);
   }
   
 }
