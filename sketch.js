@@ -1,5 +1,5 @@
 let classifier;
-let imageModelURL = 'https://teachablemachine.withgoogle.com/models/mwQrQODlI/';
+let imageModelURL = 'https://teachablemachine.withgoogle.com/models/GKhy7VSh8/'; // 바꾼 장소 학습 링크
 
 let video;
 let label = "";
