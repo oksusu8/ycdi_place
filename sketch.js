@@ -82,16 +82,16 @@ function draw() {
 }
 
 function detectPlace() {
-  let rectWidth = width * 0.7;
-  let rectHeight = height * 0.13;
-  let rectRadius = 10;
+  let rectWidth = width * 0.5;
+  let rectHeight = height * 0.08; //0.13
+  let rectRadius = 25;
   
   
   if (label == "") {
     fill(255,153,0,50);
     stroke(255,153,0);
-    strokeWeight(4);
-    circle(width/2, height*0.4, height*0.22);
+    strokeWeight(8);
+    circle(width/2, height*0.4, height*0.18);
     
     fill(255,153,0);
     noStroke();
@@ -102,7 +102,7 @@ function detectPlace() {
   else {
     fill(255,255,255,200);
     noStroke();
-    rect(width/2, height * 0.07, rectWidth, rectHeight, rectRadius);
+    rect(width/2, height * 0.09, rectWidth, rectHeight, rectRadius);
     
     fill(0);
     textSize(36);
