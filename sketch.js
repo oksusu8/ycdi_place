@@ -1,6 +1,3 @@
-let classifier;
-let imageModelURL = 'https://teachablemachine.withgoogle.com/models/GKhy7VSh8/'; // 바꾼 장소 학습 링크
-
 let video;
 let label = "";
 
@@ -16,8 +13,10 @@ let poseBtn;
 let tempState = 0;
 let autoState = 0;
 
+let classifier;
+let imageModelURL = 'https://teachablemachine.withgoogle.com/models/GKhy7VSh8/'; 
 
-// Load the model first
+
 function preload() {
   classifier = ml5.imageClassifier(imageModelURL + 'model.json');
   
@@ -30,7 +29,6 @@ function setup() {
   buttonX = width / 2;
   buttonY = height / 2;
 
-  //video = createCapture(VIDEO);
   video = createCapture({video: { facingMode: { exact: "environment" } },
   });
   video.hide();
@@ -141,36 +139,17 @@ function drawGrid(rows, cols) {
   line(0, height*0.51, width, height*0.51);
 }
 
-
-
-
-
-
-
-
-
-
-
-// Get a prediction for the current video frame
 function classifyVideo() {
-  //flippedVideo = ml5.flipImage(video)
-  //classifier.classify(flippedVideo, gotResult);
-  //flippedVideo.remove();
   classifier.classify(video, gotResult);
 
 }
 
-// When we get a result
 function gotResult(error, results) {
-  // If there is an error
   if (error) {
     console.error(error);
     return;
   }
-  // The results are in an array ordered by confidence.
-  // console.log(results[0]);
   label = results[0].label;
-  // Classifiy again!
   classifyVideo();
 }
 
